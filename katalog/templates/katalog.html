@@ -1,15 +1,30 @@
 {% extends 'base.html' %}
 
  {% block content %}
+ <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: separate; 
+    margin: 15px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100px; 
+    }
+
+    th, td {
+    padding: 10px;  
+    }
+    
+    th{
+      background-color: #FDDF95;
+    }
+  </style>
 
   <h1>Lab 1 Assignment PBP/PBD</h1>
 
-  <h5>Name: </h5>
-  <p>Fill me!</p>
-
-  <h5>Student ID: </h5>
-  <p>Fill me!</p>
-
+  <h5>Name: {{nama}} <br> Student ID: {{npm}}</h5>
+  
   <table>
     <tr>
       <th>Item Name</th>
@@ -20,6 +35,16 @@
       <th>Item URL</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
+    {% for barang in list_barang %}
+    <tr >
+        <td style="font-weight: normal">{{barang.item_name}}</td>
+        <td style="font-weight: normal">{{barang.item_price}}</td>
+        <td style="font-weight: normal">{{barang.item_stock}}</td>
+        <td style="font-weight: normal">{{barang.rating}}</td>
+        <td style="font-weight: normal">{{barang.description}}</td>
+        <td style="font-weight: normal">{{barang.item_url}}</td>
+    </tr>
+{% endfor %}
   </table>
 
  {% endblock content %}
