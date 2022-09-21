@@ -1,0 +1,114 @@
+[
+    {
+      "model": "mywatchlist.barangmywatchlist",
+      "pk": 1,
+      "fields": {
+        "watched": "Yes",
+        "title": "Suicide Squad",
+        "rating": "70",
+        "release_date" :  "20 Agustus 2017",
+        "review": "Seruu banget!!"
+      }
+    },
+    {
+        "model": "mywatchlist.barangmywatchlist",
+        "pk": 2,
+        "fields": {
+          "watched": "Yes",
+          "title": "Suicide Squad",
+          "rating": "70",
+          "release_date" :  "20 Agustus 2017",
+          "review": "Seruu banget!!"
+        }
+      },
+      {
+        "model": "mywatchlist.barangmywatchlist",
+        "pk": 3,
+        "fields": {
+          "watched": "Yes",
+          "title": "Suicide Squad",
+          "rating": "70",
+          "release_date" :  "20 Agustus 2017",
+          "review": "Seruu banget!!"
+        }
+      },
+      {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 4,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 5,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 6,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 7,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 8,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 9,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        },
+        {
+          "model": "mywatchlist.barangmywatchlist",
+          "pk": 10,
+          "fields": {
+            "watched": "Yes",
+            "title": "Suicide Squad",
+            "rating": "70",
+            "release_date" :  "20 Agustus 2017",
+            "review": "Seruu banget!!"
+          }
+        }
+  
+    
+]

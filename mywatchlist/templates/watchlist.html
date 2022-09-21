@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> -->
+<style>
+
+table{
+    table-layout: auto;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: separate; 
+    margin: 15px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100px; 
+}
+
+th, td {
+    padding: 15px;  
+}
+
+th{
+    background-color: #FDDF95;
+}
+</style>
+
+<h1>Tugas 3 PBP</h1>
+<h5>Nama: {{nama}} <br> NPM: {{npm}}  </h5>
+
+<table>
+    <tr>
+    <th>Watched</th>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Release Date</th>
+    <th>Review</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for data in list_data_watchlist %}
+    <tr>
+        <td >{{data.watched}}</td>
+        <td >{{data.title}}</td>
+        <td >{{data.rating}}</td>
+        <td >{{data.release_date}}</td>
+        <td >{{data.review}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock content %}
