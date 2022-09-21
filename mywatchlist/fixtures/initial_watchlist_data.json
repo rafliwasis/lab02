@@ -5,7 +5,7 @@
       "fields": {
         "watched": "Yes",
         "title": "Suicide Squad",
-        "rating": "70",
+        "rating": "3/5",
         "release_date" :  "20 Agustus 2017",
         "review": "Seruu banget!!"
       }
@@ -14,11 +14,11 @@
         "model": "mywatchlist.barangmywatchlist",
         "pk": 2,
         "fields": {
-          "watched": "Yes",
-          "title": "Suicide Squad",
-          "rating": "70",
-          "release_date" :  "20 Agustus 2017",
-          "review": "Seruu banget!!"
+          "watched": "No",
+          "title": "Top Gun, Maverick",
+          "rating": "4/5",
+          "release_date" :  "21 Juni 2022",
+          "review": "Gokil Parss!!"
         }
       },
       {
@@ -26,10 +26,10 @@
         "pk": 3,
         "fields": {
           "watched": "Yes",
-          "title": "Suicide Squad",
-          "rating": "70",
-          "release_date" :  "20 Agustus 2017",
-          "review": "Seruu banget!!"
+          "title": "Incantation",
+          "rating": "2,5/5",
+          "release_date" :  "13 Maret 2021",
+          "review": "Gila, parah serem bangett!"
         }
       },
       {
@@ -37,10 +37,10 @@
           "pk": 4,
           "fields": {
             "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "title": "Fantastic Sour",
+            "rating": "3,2/5",
+            "release_date" :  "31 Maret 2019",
+            "review": "GOKILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL ABIEXXZ"
           }
         },
         {
@@ -48,21 +48,21 @@
           "pk": 5,
           "fields": {
             "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "title": "Naruto",
+            "rating": "2,2/5",
+            "release_date" :  "18 Februari 2004",
+            "review": "Banyak insightnyaa seru banget"
           }
         },
         {
           "model": "mywatchlist.barangmywatchlist",
           "pk": 6,
           "fields": {
-            "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "watched": "No",
+            "title": "Babadok",
+            "rating": "5/5",
+            "release_date" :  "4 April 2015",
+            "review": "Kata temen gua tuh gila banget cok seremmm bangettttttttttttttttts, gils pars brok"
           }
         },
         {
@@ -70,10 +70,10 @@
           "pk": 7,
           "fields": {
             "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "title": "Dewa Bayan",
+            "rating": "4,3/5",
+            "release_date" :  "20 April 2012",
+            "review": "Dewanya gajelas cok, tapi seru banget dan serem"
           }
         },
         {
@@ -81,10 +81,10 @@
           "pk": 8,
           "fields": {
             "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "title": "Pencuri Uang",
+            "rating": "5/5",
+            "release_date" :  "17 Agustus 2020",
+            "review": "Belajar jadi pencuri"
           }
         },
         {
@@ -92,21 +92,21 @@
           "pk": 9,
           "fields": {
             "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "title": "Lupin",
+            "rating": "5/5",
+            "release_date" :  "3 April 2021",
+            "review": "Orangnya jago banget cok kalo nyuri"
           }
         },
         {
           "model": "mywatchlist.barangmywatchlist",
           "pk": 10,
           "fields": {
-            "watched": "Yes",
-            "title": "Suicide Squad",
-            "rating": "70",
-            "release_date" :  "20 Agustus 2017",
-            "review": "Seruu banget!!"
+            "watched": "No",
+            "title": "Nano Nano",
+            "rating": "3/5",
+            "release_date" :  "22 Mei 2020",
+            "review": "Filmnya gajelas, tp serem banget"
           }
         }
   
