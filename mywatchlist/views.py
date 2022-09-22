@@ -9,8 +9,20 @@ def show_watchlist(request):
     context = {
         'list_data_watchlist':data_watchlist,
         'nama': 'Rafli Wasis Anggito',
-        'npm' : '2106751442'
+        'npm' : '2106751442',
+        'jumlahNonton': 0,
+        'selamat':""
+
     }
+
+    for i in context.get("list_data_watchlist"):
+        if i.watched == "Yes":
+            context["jumlahNonton"] = context["jumlahNonton"] + 1
+
+    if context["jumlahNonton"] >= (len(context.get("list_data_watchlist"))/2):
+        context["selamat"] += "Selamat, kamu sudah banyak menonton!"
+    else:
+        context["selamat"] += "Wah, kamu masih sedikit menonton!"
 
     return render(request, "watchlist.html", context)
 
