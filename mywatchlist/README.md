@@ -3,6 +3,7 @@ Jelaskan perbedaan antara JSON, XML, dan HTML!
 *XML dan HTML hampir sama, tetapi XML (Extensible Markup Language) akan lebih berfokus pada transfer data, sedangkan HTML akan lebih berfokus pada penyajian datanya, selanjutnya XML berfokus pada struktur dan konteks, tetapi jika HTML berfokus pada tampilan format dari data
 
 Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+*Ketika kita mengembangkan suatu platform, kita perlu mengirimkan data dari stack satu ke stack lainnya. Data yang akan dikirim memiliki bentuk yang berbeda, berikut merupakan contoh format data yang sering digunakan: HTML, XML, dan JSON
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 *- Hal yang pertama dilakukan adalah membuat aplikasi atau folder bernama mywatchlist melalui "python manage.py startapp". Dengan melakukan ini, kita akan mendapatkan beberapa file yang selanjutnya akan kita isi dan dihubungkan satu sama lainnya
@@ -12,3 +13,12 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 *- Hal kelima yaitu dengan membuat beberapa fungsi pada views.py berkaitan dengan html xml dan json serta melakukan routing menggunakan urls.py pada mywatchlist
 *- Ketika sudah selesai, lalu kita membuat testing, dengan membuat beberapa method yang berbeda, untuk html json dan xml
 *- Lalu kita push dan commit dan terdeploy pada repository yang sama pada tugas minggu lalu.
+
+*Postman
+![image](https://user-images.githubusercontent.com/88359990/191558757-7e488f20-f91b-4de4-9f27-8052ad606310.png)
+
+![image](https://user-images.githubusercontent.com/88359990/191558779-28c7491b-4f2a-4e2b-ac77-d2f892e6af84.png)
+
+![image](https://user-images.githubusercontent.com/88359990/191559641-da5a5c75-024b-49bc-a2fc-dea6f9419932.png)
+
+
