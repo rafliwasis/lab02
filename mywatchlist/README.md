@@ -1,3 +1,7 @@
+Link HTML: https://kriboapp.herokuapp.com/mywatchlist/html/
+Link JSON: https://kriboapp.herokuapp.com/mywatchlist/json/
+Link XML: https://kriboapp.herokuapp.com/mywatchlist/xml/
+
 Jelaskan perbedaan antara JSON, XML, dan HTML!
 *JSON(JavaScript Object Notation) merupakan suatu format yang berguna untuk menyimpan, membaca, dan menukar informasi dari server web
 *XML dan HTML hampir sama, tetapi XML (Extensible Markup Language) akan lebih berfokus pada transfer data, sedangkan HTML akan lebih berfokus pada penyajian datanya, selanjutnya XML berfokus pada struktur dan konteks, tetapi jika HTML berfokus pada tampilan format dari data
