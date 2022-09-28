@@ -9,7 +9,6 @@
   body{
     background: rgb(104,221,164);
     background: linear-gradient(90deg, rgba(104,221,164,1) 0%, rgba(145,145,205,1) 34%, rgba(107,111,223,1) 75%, rgba(65,164,184,1) 100%);
-    
     font-family: 'Poppins',sans-serif;
   }
 
@@ -20,8 +19,16 @@
     color: #ffffff;
   }
 
+  .status{
+    margin: auto; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Poppins',sans-serif;
+  }
 
-  button{
+
+  .footer{
     font-family: 'Poppins',sans-serif;
     margin: auto; 
     background-color: #ffffff;
@@ -45,8 +52,11 @@
     border-collapse: separate; 
     margin: 15px 0;
     font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 100px; 
+    min-width: 100px;
+  }
+
+  th{
+    font-family: 'Poppins',sans-serif;
   }
 
   th, td {
@@ -64,9 +74,12 @@
 
 <table>
   <tr>
-    <th>Tanggal</th>
-    <th>Judul</th>
-    <th>Deskripsi</th>
+    <th>Date</th>
+    <th>To Do</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th colspan="2">Change Status</th>
+
   </tr>
   {% comment %} Tambahkan data di bawah baris ini {% endcomment %} 
   {% for todo in todolist_data %}
@@ -75,11 +88,19 @@
       <th style="font-weight: normal">{{todo.date}}</th>
       <th style="font-weight: normal">{{todo.title}}</th>
       <th style="font-weight: normal">{{todo.description}}</th>
+      {% if todo.is_finished == False %}
+      <th style="font-weight: normal">Belum Selesai</th>
+      {% else %}
+      <th style="font-weight: normal">Selesai</th>
+      {% endif %}
+      <th><button class="status"><a href="{% url 'todolist:cek_status' todo.id %}">Ubah Status</a></button></th>
+      <th><button class="status"><a href="{% url 'todolist:delete_todo_list' todo.id %}">Clear</a></button></th>
+
     </tr>
-  {% endfor %}
+    {% endfor %}
 </table>
 <!-- <h5>Sesi terakhir login: {{ last_login }}</h5> -->
-<button ><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<button class="footer"><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
+<button class="footer"><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
 {% endblock content %}

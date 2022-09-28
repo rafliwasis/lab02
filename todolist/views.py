@@ -17,7 +17,6 @@ def show_todolist(request):
     context = {
         'todolist_data': data_todolist,
         'userName': request.user,
-        # 'last_login': request.COOKIES['last_login'],
     }
     return render(request, "todolist.html", context)
 
@@ -65,5 +64,20 @@ def create_task(request):
             description = description,
         )
         create_task.save()
-        return redirect('todolist:show_todolist')
+        return redirect('todolist:create_task')
     return render(request, 'createtask.html')
+
+def delete_todo_list(request, id):
+    itemList = Task.objects.filter(id=id)
+    itemList.delete()
+    return redirect('todolist:show_todolist')
+
+def cek_status(request, id):
+    todoListCheck = Task.objects.get(pk=id)
+    if (todoListCheck.is_finished == False):
+        todoListCheck.is_finished = True
+    else:
+        todoListCheck.is_finished = False
+    todoListCheck.save()
+    return redirect('todolist:show_todolist')
+
