@@ -12,14 +12,14 @@ Eksternal CSS merupakan suatu style yang dituliskan pada file eksternal (misal: 
 (-) Biasanya bisa terjadi error dalam pemanggilan sehingga tidak terlihat perubahannya dalam page
 
 Jelaskan tag HTML5 yang kamu ketahui.
-<p> untuk merepresentasikan paragraf
-<div> untuk membuat section/container
-<link> untuk menginclude suatu path/link
-<title>  untuk mengatur title tab browser
-<a> untuk menambah suatu link pada page
-<body> untuk membuat dokumen body
-<head> untuk membuat head dokumen, bisa berisi title
-<h1> to <h6> untuk mendefinisikan html headings (headings untuk font, yaitu seperti besar kecil font)
+tag p untuk merepresentasikan paragraf
+tag div untuk membuat section/container
+tag link untuk menginclude suatu path/link
+tag title  untuk mengatur title tab browser
+tag a untuk menambah suatu link pada page
+tag body untuk membuat dokumen body
+tag head untuk membuat head dokumen, bisa berisi title
+tag h1 sampai h6 untuk mendefinisikan html headings (headings untuk font, yaitu seperti besar kecil font)
 
 Jelaskan tipe-tipe CSS selector yang kamu ketahui.
 selector tag <p> untuk memilih elemen berdasarkan nama tag untuk menambahkan style.
