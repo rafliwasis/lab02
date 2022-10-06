@@ -52,7 +52,7 @@
       
     {% for todo in todolist_data %}
       <div class="col-auto mb-3">
-          <div class="card border-primary mx-auto" style="width: 18rem;">
+          <div class="card border-primary mx-auto shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
               <div class="card-body">
                   <h3 class="card-title">{{todo.title}}</h3>
                   <h6 class="card-text"><small class="text-muted">{{todo.date}}</small></h6>
@@ -64,8 +64,8 @@
                     Selesai
                     {% endif %}
                   </p>
-                    <a class="btn login_btn btn btn-primary form-control mt-3" href="{% url 'todolist:cek_status' todo.id %}">Ubah Status</a>
-                    <a class="btn login_btn btn btn-danger form-control lg mt-2" href="{% url 'todolist:delete_todo_list' todo.id %}">Clear</a>
+                    <a class="btn login_btn btn btn-primary float-right form-control mt-3" href="{% url 'todolist:cek_status' todo.id %}">Ubah Status</a>
+                    <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" href="{% url 'todolist:delete_todo_list' todo.id %}">Clear</a>
               </div>
           </div>
       </div>
