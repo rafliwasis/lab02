@@ -12,18 +12,18 @@ Eksternal CSS merupakan suatu style yang dituliskan pada file eksternal (misal: 
 (-) Biasanya bisa terjadi error dalam pemanggilan sehingga tidak terlihat perubahannya dalam page
 
 Jelaskan tag HTML5 yang kamu ketahui.
-• <p> untuk merepresentasikan paragraf
-• <div> untuk membuat section/container
-• <link> untuk menginclude suatu path/link
-• <title>  untuk mengatur title tab browser
-• <a> untuk menambah suatu link pada page
-• <body> untuk membuat dokumen body
-• <head> untuk membuat head dokumen, bisa berisi title
-• <h1> to <h6> untuk mendefinisikan html headings (headings untuk font, yaitu seperti besar kecil font)
+<p> untuk merepresentasikan paragraf
+<div> untuk membuat section/container
+<link> untuk menginclude suatu path/link
+<title>  untuk mengatur title tab browser
+<a> untuk menambah suatu link pada page
+<body> untuk membuat dokumen body
+<head> untuk membuat head dokumen, bisa berisi title
+<h1> to <h6> untuk mendefinisikan html headings (headings untuk font, yaitu seperti besar kecil font)
 
 Jelaskan tipe-tipe CSS selector yang kamu ketahui.
-• selector tag <p> untuk memilih elemen berdasarkan nama tag untuk menambahkan style.
-• selector class (misal : .login{}) akan memilih elemen berdasarkan nama class yang diberikan untuk menambahkan style.
-• selector id (misal : #style {}) bersifat lebih unik sehingga dapat digunakan oleh satu elemen saja untuk menambahkan style. 
-• selector pseudo akan memilih elemen semu seperti state pada elemen, pada selector ini terdapat dua macam selector pseudo, yaitu pseudo-element dan pseudo-class.
-• selector atribut akan memilih elemen berdasarkan atribut untuk menambahkan style.
+selector tag <p> untuk memilih elemen berdasarkan nama tag untuk menambahkan style.
+selector class (misal : .login{}) akan memilih elemen berdasarkan nama class yang diberikan untuk menambahkan style.
+selector id (misal : #style {}) bersifat lebih unik sehingga dapat digunakan oleh satu elemen saja untuk menambahkan style. 
+selector pseudo akan memilih elemen semu seperti state pada elemen, pada selector ini terdapat dua macam selector pseudo, yaitu pseudo-element dan pseudo-class.
+selector atribut akan memilih elemen berdasarkan atribut untuk menambahkan style.
