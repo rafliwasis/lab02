@@ -27,3 +27,8 @@ selector class (misal : .login{}) akan memilih elemen berdasarkan nama class yan
 selector id (misal : #style {}) bersifat lebih unik sehingga dapat digunakan oleh satu elemen saja untuk menambahkan style. 
 selector pseudo akan memilih elemen semu seperti state pada elemen, pada selector ini terdapat dua macam selector pseudo, yaitu pseudo-element dan pseudo-class.
 selector atribut akan memilih elemen berdasarkan atribut untuk menambahkan style.
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist diatas!
+1) Meletakkan link bootstrap pada bagian head atau menginstall bootstrap agar bootstrap dapat connect ke HTML, dan jangan lupa meletakkan load static agar ketika kita menggunakan css external dapat terpanggil
+2) Pada page login dan create task, saya hanya menggunakan css dengan menambahkan form. Serta mengubah tampilan dengan memberikan warna gradient serta shadow pada form. Pada register, saya menggunakan class cards lalu table register dimasukkan kedalam cards tersebut. Selanjutnya, mengatur posisi tengah pada cards tersebut
+3) Pada page todolist, kita menambahkan class berupa cards yang mana cards tersebut di foorlop dan ketika cards berjumlah lebih dari 3, maka cards selanjutnya akan ditampilkan pada line berikutnya, saya juga menggunakan navbar collapse serta footer yang menandakan akhir bagian dalam page tsb
