@@ -7,6 +7,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/todolist.css' %}"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 {% endblock meta %}
 
@@ -27,7 +29,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'todolist:create_task' %}">Create Task</a></a>
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Task</a></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -43,35 +45,105 @@
 
 
 <body>
-
   <div class="d-flex justify-content-center mt-5 mb-5 text-center text-capitalize">
     <h1>Hello {{userName}}, <br>Your To Do List!</h1>
   </div>
 
-  <div class="row row-cols-md-3 mx-auto justify-content-center">
-      
-    {% for todo in todolist_data %}
-      <div class="col-auto mb-3">
-          <div class="card border-primary mx-auto shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem; background-color: greenyellow;">
-              <div class="card-body">
-                  <h3 class="card-title"><mark>{{todo.title}}</mark> </h3>
-                  <h6 class="card-text"><small class="text-muted">{{todo.date}}</small></h6>
-                  <p class="card-text">{{todo.description}}</p>
-                  <p class="card-text">
-                    {% if todo.is_finished == False %}
-                    Belum Selesai
-                    {% else %}
-                    Selesai
-                    {% endif %}
-                  </p>
-                    <a class="btn login_btn btn btn-dark float-right form-control mt-3" href="{% url 'todolist:cek_status' todo.id %}">Change Status</a>
-                    <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" href="{% url 'todolist:delete_todo_list' todo.id %}">Clear</a>
-              </div>
+  <!-- Modal -->
+  <form action="" method="POST" id="tambahTask">  
+    {% csrf_token %} 
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Your Todolist!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <div class="modal-body">
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                          <br>
+                          <input class="form-control" type="text" id="description" name="description" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="createBtn">Add</button>
+          </div>
+        </div>
       </div>
+    </div>
+
+  <div class="row row-cols-md-3 mx-auto justify-content-center" id="container">
+
+  </div>
+
+  <div class="row row-cols-md-3 mx-auto justify-content-center">
+    {% for todo in todolist_data %}
+      
     {% endfor %}
   </div>
 </body>
+
+<script>
+  
+  function show_addtodo(){
+    let tasktodo = ""
+    $.ajax({
+      url: "{% url 'todolist:show_json' %}",
+      type: 'GET',
+      dataType:"json",
+      success: function(todo) {
+        for (i of todo) {
+
+          let flag = i.fields.is_finished ? "Selesai" : "Belum Selesai"
+          tasktodo += `
+            <div class="col-auto mb-3">
+                <div class="card border-primary mx-auto shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem; background-color: greenyellow;">
+                  <div class="card-body">
+                      <h3 class="card-title text-capitalize">${i.fields.title}</h3>
+                      <h6 class="card-text"><small class="text-muted">${i.fields.date}</small></h6>
+                      <br>
+                      <p class="card-text">${i.fields.description}<br>
+                        ${flag}
+                      </p>
+                      <a class="btn login_btn btn btn-dark float-right form-control mt-3" href="cek_status/${i.pk}">Change Status</a>
+                      <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" href="delete_todo_list/${i.pk}">Clear</a>
+                  </div>
+                </div>
+            </div>`;
+            $('#container').html(tasktodo)
+        }
+      },
+      error: function() { 
+        console.log('error');
+      }
+    });
+  }
+
+  $(document).on("submit", "#tambahTask", function(e) {
+    $.ajax ({
+          url: "{% url 'todolist:add_todolist_ajax' %}",
+          type: "POST",
+          dataType:"json",
+          data: {
+              title:$("#title").val(),
+              description:$("#description").val(),
+              csrfmiddlewaretoken: "{{ csrf_token }}"
+          },
+          success: function(data) {
+              show_card();
+              const inputs = document.querySelectorAll('#title, #description');
+              inputs.forEach(input => {
+                  input.value = '';
+              });
+          }
+      })
+  })
+
+  $(document).ready(function () {
+      show_addtodo();
+  })
+
+</script>
 
 <footer class="py-5 my-5">
   <div class="text-center p-3">

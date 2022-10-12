@@ -7,7 +7,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
+import json
+from django.core import serializers
+from django.http.response import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 # Create your views here.
 
@@ -81,3 +85,24 @@ def cek_status(request, id):
     todoListCheck.save()
     return redirect('todolist:show_todolist')
 
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    todolist_item = Task.objects.all()
+    return HttpResponse(serializers.serialize('json', todolist_item), content_type='application/json')
+
+def add_todolist_ajax(request):
+    title = request.POST.get('title')
+    description = request.POST.get('description')
+    add_todolist_ajax = Task(
+        user = request.user,
+        title = title,
+        description = description,
+    )
+    add_todolist_ajax.save()
+    return JsonResponse({"task": "new todolist"})
+
+@csrf_exempt
+def delete_todolist_ajax(request,id):
+    task = Task.objects.filter(pk=id)   
+    task.delete()
+    return JsonResponse({"task": "clear todolist"})
