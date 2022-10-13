@@ -50,7 +50,7 @@
   </div>
 
   <!-- Modal -->
-  <form action="" method="POST" id="tambahTask">  
+  <form action="" method="POST" id="addTodoList">  
     {% csrf_token %} 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -61,8 +61,7 @@
           </div>
           <div class="modal-body">
             <input class="form-control" type="text" id="title" name="title" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
-                          <br>
-                          <input class="form-control" type="text" id="description" name="description" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1">
+                          <br><input class="form-control" type="text" id="description" name="description" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -74,12 +73,6 @@
 
   <div class="row row-cols-md-3 mx-auto justify-content-center" id="container">
 
-  </div>
-
-  <div class="row row-cols-md-3 mx-auto justify-content-center">
-    {% for todo in todolist_data %}
-      
-    {% endfor %}
   </div>
 </body>
 
@@ -93,23 +86,26 @@
       dataType:"json",
       success: function(todo) {
         for (i of todo) {
-
-          let flag = i.fields.is_finished ? "Selesai" : "Belum Selesai"
+          let titleTask = i.fields.title
+          let dateTask = i.fields.date
+          let descTask = i.fields.description
+          let statusTask = i.fields.is_finished ? "Selesai" : "Belum Selesai"
           tasktodo += `
             <div class="col-auto mb-3">
                 <div class="card border-primary mx-auto shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem; background-color: greenyellow;">
                   <div class="card-body">
-                      <h3 class="card-title text-capitalize">${i.fields.title}</h3>
-                      <h6 class="card-text"><small class="text-muted">${i.fields.date}</small></h6>
+                      <h3 class="card-title text-capitalize">${titleTask}</h3>
+                      <h6 class="card-text"><small class="text-muted">${dateTask}</small></h6>
                       <br>
-                      <p class="card-text">${i.fields.description}<br>
-                        ${flag}
+                      <p class="card-text">${descTask}<br>
+                        ${statusTask}
                       </p>
                       <a class="btn login_btn btn btn-dark float-right form-control mt-3" href="cek_status/${i.pk}">Change Status</a>
                       <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" href="delete_todo_list/${i.pk}">Clear</a>
                   </div>
                 </div>
             </div>`;
+            console.log('berhasil');
             $('#container').html(tasktodo)
         }
       },
@@ -119,7 +115,7 @@
     });
   }
 
-  $(document).on("submit", "#tambahTask", function(e) {
+  $(document).on("submit", "#addTodoList", function(e) {
     $.ajax ({
           url: "{% url 'todolist:add_todolist_ajax' %}",
           type: "POST",
