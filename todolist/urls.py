@@ -22,4 +22,5 @@ urlpatterns = [
     path('json/', show_json , name='show_json'),
     path('add/', add_todolist_ajax , name='add_todolist_ajax'),
     path('delete/<int:id>/', delete_todolist_ajax, name='delete_todolist_ajax'),
+    
 ]
