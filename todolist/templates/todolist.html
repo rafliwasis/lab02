@@ -101,7 +101,7 @@
                         ${statusTask}
                       </p>
                       <a class="btn login_btn btn btn-dark float-right form-control mt-3" href="cek_status/${i.pk}">Change Status</a>
-                      <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" href="delete_todo_list/${i.pk}">Clear</a>
+                      <a class="btn login_btn btn btn-danger float-right form-control lg mt-2" onclick="clearTask(${i.pk})">Clear</a>
                   </div>
                 </div>
             </div>`;
@@ -113,6 +113,20 @@
         console.log('error');
       }
     });
+  }
+
+  function clearTask(pk){
+    $.ajax({
+        url: `/todolist/delete/${pk}`,
+        type: "DELETE",
+        success: function(data) {
+            $(`#${pk}`).remove()
+            show_addtodo()
+        },
+        error: function() { 
+        console.log('error');
+      }
+    })
   }
 
   $(document).on("submit", "#addTodoList", function(e) {

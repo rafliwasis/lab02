@@ -1,11 +1,13 @@
 from django.urls import path
-from todolist.views import add_todolist_ajax, delete_todolist_ajax, show_json, show_todolist
+from todolist.views import add_todolist_ajax, show_json, show_todolist
 from todolist.views import register
 from todolist.views import login_user
 from todolist.views import logout_user
 from todolist.views import create_task
 from todolist.views import delete_todo_list
 from todolist.views import cek_status
+from todolist.views import delete_todolist_ajax
+
 
 app_name = 'todolist'
 
