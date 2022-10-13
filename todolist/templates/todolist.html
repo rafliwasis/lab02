@@ -130,6 +130,7 @@
   }
 
   $(document).on("submit", "#addTodoList", function(e) {
+    e.preventDefault();
     $.ajax ({
           url: "{% url 'todolist:add_todolist_ajax' %}",
           type: "POST",
@@ -140,11 +141,13 @@
               csrfmiddlewaretoken: "{{ csrf_token }}"
           },
           success: function(data) {
-              show_card();
+            console.log("sukses")
+              show_addtodo();
               const inputs = document.querySelectorAll('#title, #description');
               inputs.forEach(input => {
                   input.value = '';
               });
+
           }
       })
   })
